@@ -70,8 +70,8 @@ function setup() {
    createCanvas(windowWidth / 1, windowHeight / 1);
   background(0);
 
-  fundo.loop();
-  fundo.setVolume(0.4);
+  //fundo.loop();
+ // fundo.setVolume(0.4);
 
   delay = new p5.Delay();
 
