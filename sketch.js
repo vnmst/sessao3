@@ -67,7 +67,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowwWidth, windowHeight);
+   createCanvas(windowWidth, windowHeight);
   background(0);
 
   fundo.loop();
