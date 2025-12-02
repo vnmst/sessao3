@@ -200,3 +200,13 @@ function keyPressed() {
     glitchTempo = 500;
   }
 }
+
+function mousePressed() {
+  userStartAudio()
+    .then(() => {
+      console.log("🔊 Áudio liberado pelo usuário");
+    })
+    .catch(err => {
+      console.error("Falha ao iniciar áudio:", err);
+    });
+}
