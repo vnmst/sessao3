@@ -189,7 +189,7 @@ function keyPressed() {
     'T': 1, 'Y': 2, 'U': 3, 'I': 4,
     'O': 5, 'P': 6, '[': 7, ']': 8,
     ';': 9, "'": 10, '2': 12
-  };
+  }; 
 
   if (flashMap[tecla]) {
     flashImagem = flashImagens[flashMap[tecla]];
