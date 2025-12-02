@@ -21,6 +21,7 @@ let corIndex = 0;
 
 let pitchGeral = 1.0;
 let delayAmt = 0.0;
+let audioIniciado = false;
 
 function preload() {
 
@@ -66,7 +67,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(800, 600);
+  createCanvas(width, height);
   background(0);
 
   fundo.loop();
@@ -202,11 +203,14 @@ function keyPressed() {
 }
 
 function mousePressed() {
-  userStartAudio()
-    .then(() => {
-      console.log("🔊 Áudio liberado pelo usuário");
-    })
-    .catch(err => {
-      console.error("Falha ao iniciar áudio:", err);
-    });
+  if (!audioIniciado) {
+    userStartAudio()
+      .then(() => {
+        console.log("Áudio liberado!");
+        fundo.loop();       // Inicia o som de fundo
+        fundo.setVolume(0.4);
+        audioIniciado = true; // Marca que o áudio já foi iniciado
+      })
+      .catch(err => console.error("Erro ao iniciar áudio:", err));
+  }
 }
